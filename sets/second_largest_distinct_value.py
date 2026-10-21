@@ -1,21 +1,12 @@
 def second_largest(numbers):
 
-
-    if ((numbers == []) or (max(numbers) == min(numbers))):
-        second_largest = -1 # should return -1 if there is an empty list 
-        # or all the numbers are the same like  [5, 5, 5]
-
-    else: 
-
-        set_unique_numbers = set(numbers) # make a set collection, 
-        # removing the repeated numbers
-
-        ordered_numbers = sorted(set_unique_numbers) # 1 2 3 4 5
-
-        second_largest = ordered_numbers[-2]
-
-    return second_largest
-
+    sorted_numbers = sorted(set(numbers))                            # numbers -> set, to remove repeated numbers
+        # and sorted to have a rising order, [-2] will be the 2nd element from the end
+                    
+    if len(sorted_numbers) < 2:
+        return -1
+    else:
+        return sorted_numbers[-2]
 
 # test
 
